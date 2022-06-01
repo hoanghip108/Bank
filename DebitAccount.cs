@@ -13,7 +13,7 @@ namespace Bank
         {
             Threshold = threshold;
         }
-        public void ShowInfo()
+        public override void ShowInfo()
         {
             base.ShowInfo();
             Console.WriteLine("Threshold: {0}",Threshold);

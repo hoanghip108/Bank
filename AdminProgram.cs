@@ -54,6 +54,7 @@ namespace Bank
             Console.WriteLine("Choose type of account");
             Console.WriteLine("1. Debit");
             Console.WriteLine("2. Normal");
+            int choice = int.Parse(Console.ReadLine());
             Account acc = CreateAccount(choice);
             accounts.Add(acc);
         }
@@ -69,9 +70,18 @@ namespace Bank
 
             if(choice ==2)
             return new Account(usr,pwd,bl);
+            if(choice==3)
+            {
+            Console.WriteLine("Enter account interest: ");
+            double interest = double.Parse(Console.ReadLine());
+            return new InterestAccount(usr,pwd,bl,interest);
+            }
+            else
+            {    
             Console.WriteLine("Enter threshold: ");
             double threshold = double.Parse(Console.ReadLine());
             return new DebitAccount(usr,pwd,bl,threshold);
+            }
             
         }
         private void ShowUsers()

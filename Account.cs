@@ -33,7 +33,7 @@ namespace Bank
             Password = password;
             this.balance = balance;
         }
-        public void ShowInfo()
+        public  virtual void ShowInfo()
         {
             Console.WriteLine("ID: {0}", id);
             Console.WriteLine("Username:{0}",Name);
